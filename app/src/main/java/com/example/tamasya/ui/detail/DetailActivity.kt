@@ -1,0 +1,66 @@
+package com.example.tamasya.ui.detail
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import androidx.lifecycle.ViewModelProvider
+import com.bumptech.glide.Glide
+import com.example.tamasya.R
+import com.example.tamasya.databinding.ActivityDetailBinding
+import com.example.tamasya.extention.getTimeAgo
+import com.example.tamasya.extention.loadImage
+import com.example.tamasya.extention.parseHtml
+import com.example.tamasya.helper.LoadingDialog
+import com.example.tamasya.model.DataItem
+
+class DetailActivity : AppCompatActivity() {
+    // binding
+    private lateinit var binding: ActivityDetailBinding
+    // view model
+    private lateinit var detailViewModel: DetailViewModel
+    private var dataItem: DataItem? = null
+    // dialog
+    private lateinit var loadingDialog: LoadingDialog
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityDetailBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        // back to MainActivity
+        binding.backBtn.setOnClickListener {
+            finish()
+        }
+
+        // loading dialog
+        loadingDialog = LoadingDialog(this) // Inisialisasi loading dialog
+
+        val newsImage = intent.getStringExtra("news_thumb")
+        Glide.with(this)
+            .load(newsImage)
+            .placeholder(R.drawable.pp)
+            .into(binding.image2)
+
+        // Setting up ViewModel
+        detailViewModel = ViewModelProvider(this)[DetailViewModel::class.java]
+
+        // Show loading dialog before making the API call
+        val newsId = intent.getStringExtra("news_id")
+        newsId?.let {
+            loadingDialog.show()
+            detailViewModel.getDetail(it)
+        }
+
+        detailViewModel.response.observe(this) { newsData ->
+            loadingDialog.dismiss() // Sembunyikan dialog setelah mendapatkan respons
+            showData(newsData)
+        }
+    }
+
+    private fun showData(data: DataItem) {
+        dataItem = data
+        binding.title2.text = data.title
+        binding.image2.loadImage(data.thumb)
+        binding.date.text = data.createdAt.getTimeAgo()
+        binding.description2.text = data.content.parseHtml()
+    }
+}

@@ -1,0 +1,91 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Tamasya" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.Tamasya" parent="Base.Theme.Tamasya" />
+
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="circular" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="CardViewGridImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">@dimen/_16sdp</item>
+        <item name="cornerSizeTopRight">@dimen/_16sdp</item>
+    </style>
+
+    <style name="CardViewListImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">@dimen/_16sdp</item>
+        <item name="cornerSizeBottomLeft">@dimen/_16sdp</item>
+    </style>
+
+    <style name="DetailImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10%</item>
+    </style>
+
+    <style name="MenuTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textColor">@color/title</item>
+        <item name="android:textSize">@dimen/_32sdp</item>
+
+        <item name="android:fontFamily">@font/josefin_slab_bold</item>
+    </style>
+
+    <style name="Category">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">end</item>
+        <item name="android:textColor">@color/desc_category</item>
+        <item name="android:textSize">@dimen/_12sdp</item>
+
+        <item name="android:fontFamily">@font/work_sans_medium</item>
+    </style>
+
+    <style name="CardViewTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textColor">@color/title</item>
+        <item name="android:textSize">@dimen/_16sdp</item>
+
+        <item name="android:fontFamily">@font/josefin_slab_bold</item>
+    </style>
+
+    <style name="Date">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textColor">@color/date</item>
+        <item name="android:textSize">@dimen/_12sdp</item>
+
+        <item name="android:fontFamily">@font/work_sans</item>
+    </style>
+
+    <style name="DescriptionTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textColor">@color/title</item>
+        <item name="android:textSize">@dimen/_24sdp</item>
+
+        <item name="android:fontFamily">@font/josefin_slab_bold</item>
+    </style>
+
+    <style name="DescriptionDetail">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textColor">@color/desc_category</item>
+        <item name="android:textSize">@dimen/_14sdp</item>
+
+        <item name="android:fontFamily">@font/work_sans_medium</item>
+    </style>
+
+</resources>

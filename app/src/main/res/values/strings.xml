@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">News</string>
+
+    <string name="explore">Explore</string>
+    <string name="title">Title</string>
+    <string name="desc">Description</string>
+    <string name="category">Category</string>
+    <string name="date">Date</string>
+    <string name="search">Cari disini . . .</string>
+    <string name="please_wait">Please wait . . .</string>
+
+    <string name="list">List</string>
+    <string name="grid">Grid</string>
+
+</resources>

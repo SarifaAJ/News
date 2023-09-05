@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="mainBackground">#FFF7EB</color>
+    <color name="detailBackground">#CAD8E6</color>
+    <color name="textTitle">#FFECCF</color>
+    <color name="textDesc">#78A3C5</color>
+    <color name="searchView">#A2C6D8</color>
+
+    <color name="background">#ffffff</color>
+    <color name="background2">#bfc0c0</color>
+    <color name="title">#2d3142</color>
+    <color name="desc_category">#4f5d75</color>
+    <color name="date">#ef8354</color>
+</resources>
