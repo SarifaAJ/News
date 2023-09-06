@@ -23,8 +23,6 @@ class NewsListItemHolder(itemView: View) : RecyclerView.ViewHolder(itemView), Ne
             // category
             data.newsCategory.let {
                 category.text = it.title
-            } ?: run {
-                category.text = "-"
             }
             // date
             date.text = data.updatedAt.getTimeAgo()

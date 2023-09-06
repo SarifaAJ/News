@@ -53,6 +53,14 @@
             android:padding="@dimen/_8sdp">
 
             <TextView
+                android:id="@+id/category"
+                style="@style/Category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:text="@string/category" />
+
+            <TextView
                 android:id="@+id/title2"
                 style="@style/DescriptionTitle"
                 android:layout_width="match_parent"

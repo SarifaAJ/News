@@ -50,9 +50,17 @@ class DetailActivity : AppCompatActivity() {
 
     private fun showData(data: DataItem) {
         dataItem = data
+        // title
         binding.title2.text = data.title
+        // image
         binding.image2.loadImage(data.thumb)
+        // category
+        data.newsCategory.let {
+            binding.category.text = it.title
+        }
+        // date
         binding.date.text = data.createdAt.getTimeAgo()
+        // description
         binding.description2.text = data.content.parseHtml()
     }
 }
