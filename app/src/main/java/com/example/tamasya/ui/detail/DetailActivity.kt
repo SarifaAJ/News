@@ -3,8 +3,6 @@ package com.example.tamasya.ui.detail
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
-import com.bumptech.glide.Glide
-import com.example.tamasya.R
 import com.example.tamasya.databinding.ActivityDetailBinding
 import com.example.tamasya.extention.getTimeAgo
 import com.example.tamasya.extention.loadImage
@@ -32,13 +30,7 @@ class DetailActivity : AppCompatActivity() {
         }
 
         // loading dialog
-        loadingDialog = LoadingDialog(this) // Inisialisasi loading dialog
-
-        val newsImage = intent.getStringExtra("news_thumb")
-        Glide.with(this)
-            .load(newsImage)
-            .placeholder(R.drawable.pp)
-            .into(binding.image2)
+        loadingDialog = LoadingDialog(this) // Initialize loading dialog
 
         // Setting up ViewModel
         detailViewModel = ViewModelProvider(this)[DetailViewModel::class.java]
@@ -51,7 +43,7 @@ class DetailActivity : AppCompatActivity() {
         }
 
         detailViewModel.response.observe(this) { newsData ->
-            loadingDialog.dismiss() // Sembunyikan dialog setelah mendapatkan respons
+            loadingDialog.dismiss() // Hide dialog after getting a response
             showData(newsData)
         }
     }

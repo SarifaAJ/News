@@ -29,8 +29,8 @@
     </style>
 
     <style name="DetailImageView">
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">10%</item>
+        <item name="cornerSizeBottomRight">@dimen/_32sdp</item>
+        <item name="cornerSizeBottomLeft">@dimen/_32sdp</item>
     </style>
 
     <style name="MenuTitle">

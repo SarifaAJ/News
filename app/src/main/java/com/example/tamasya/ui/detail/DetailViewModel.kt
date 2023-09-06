@@ -4,7 +4,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.tamasya.base.BaseViewModel
 import com.example.tamasya.model.DataItem
-import com.example.tamasya.model.NewsCategory
 import com.example.tamasya.network.getErrorMessage
 import com.example.tamasya.repo.Repo
 import io.reactivex.android.schedulers.AndroidSchedulers

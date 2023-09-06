@@ -41,11 +41,11 @@ class MainActivity : AppCompatActivity() {
         // Setting up the RecyclerView for displaying data
         val recyclerView = binding.recyclerView
         recyclerView.layoutManager = LinearLayoutManager(this)
-        newsAdapter = NewsAdapter(viewType = NewsAdapter.VIEW_TYPE_LIST) // Atau viewType = KanjiAdapter.VIEW_TYPE_GRID sesuai kebutuhan
+        newsAdapter = NewsAdapter(viewType = NewsAdapter.VIEW_TYPE_LIST) // you can also use use viewType = KanjiAdapter.VIEW_TYPE_GRID
         recyclerView.adapter = newsAdapter
 
         // loading dialog
-        loadingDialog = LoadingDialog(this) // Inisialisasi loading dialog
+        loadingDialog = LoadingDialog(this) // Initialize loading dialog
 
         // Setting up ViewModel
         mainViewModel = ViewModelProvider(this)[MainViewModel::class.java]
@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
         mainViewModel.getNews()
 
         mainViewModel.response.observe(this) { newsList ->
-            loadingDialog.dismiss() // Sembunyikan dialog setelah mendapatkan respons
+            loadingDialog.dismiss() // Hide dialog after getting a response
             newsAdapter.setData(ArrayList(newsList))
         }
 
@@ -83,16 +83,16 @@ class MainActivity : AppCompatActivity() {
 
         if (isListView) {
             recyclerView.layoutManager = LinearLayoutManager(this)
-            binding.toggleButton.setImageResource(R.drawable.round_list_view) // Ganti gambar menjadi ikon list
+            binding.toggleButton.setImageResource(R.drawable.round_list_view)
             newsAdapter = NewsAdapter(initialData = ArrayList(), viewType = NewsAdapter.VIEW_TYPE_LIST)
         } else {
-            recyclerView.layoutManager = GridLayoutManager(this, 2) // Atur numberOfColumns sesuai kebutuhan
-            binding.toggleButton.setImageResource(R.drawable.round_grid_view) // Ganti gambar menjadi ikon grid
+            recyclerView.layoutManager = GridLayoutManager(this, 2)
+            binding.toggleButton.setImageResource(R.drawable.round_grid_view)
             newsAdapter = NewsAdapter(initialData = ArrayList(), viewType = NewsAdapter.VIEW_TYPE_GRID)
         }
 
         recyclerView.adapter = newsAdapter
-        newsAdapter.setData(ArrayList(mainViewModel.response.value!!)) // Set data ulang ke adapter
+        newsAdapter.setData(ArrayList(mainViewModel.response.value!!)) // reset data to adapter
     }
 
 }

@@ -12,6 +12,7 @@ interface NewsHolderInterface {
     fun bindData(data: DataItem)
 }
 
+// holder for list view
 class NewsListItemHolder(itemView: View) : RecyclerView.ViewHolder(itemView), NewsHolderInterface {
     private val binding = ListItemBinding.bind(itemView)
 
@@ -33,6 +34,7 @@ class NewsListItemHolder(itemView: View) : RecyclerView.ViewHolder(itemView), Ne
     }
 }
 
+// holder for grid view
 class NewsGridItemHolder(itemView: View) : RecyclerView.ViewHolder(itemView), NewsHolderInterface {
     private val binding = GridItemBinding.bind(itemView)
 

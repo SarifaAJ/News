@@ -27,10 +27,12 @@ class NewsAdapter(private var initialData: ArrayList<DataItem> = ArrayList(), pr
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when (viewType) {
+            //  binding for list view
             VIEW_TYPE_LIST -> {
                 val binding = ListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
                 NewsListItemHolder(binding.root)
             }
+            // //  binding for grid view
             VIEW_TYPE_GRID -> {
                 val binding = GridItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
                 NewsGridItemHolder(binding.root)
@@ -52,8 +54,7 @@ class NewsAdapter(private var initialData: ArrayList<DataItem> = ArrayList(), pr
 
         holder.itemView.setOnClickListener {
             val intent = Intent(holder.itemView.context, DetailActivity::class.java)
-            intent.putExtra("news_id", dataItem.id) // Pass the level ID to BunpoActivity
-            intent.putExtra("news_thumb", dataItem.thumb) // Pass the level ID to BunpoActivity
+            intent.putExtra("news_id", dataItem.id) // Pass the level ID to DetailActivity
             holder.itemView.context.startActivity(intent)
         }
 
@@ -62,6 +63,7 @@ class NewsAdapter(private var initialData: ArrayList<DataItem> = ArrayList(), pr
         }
     }
 
+    // filter data for search view
     fun filter(query: String) {
         filteredData.clear()
 
@@ -78,6 +80,7 @@ class NewsAdapter(private var initialData: ArrayList<DataItem> = ArrayList(), pr
 
         notifyDataSetChanged()
     }
+    // set data
     fun setData(newData: ArrayList<DataItem>) {
         data.clear()
         data.addAll(newData)
