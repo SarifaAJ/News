@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.tamasya"
+    namespace = "com.example.news"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.example.tamasya"
+        applicationId = "com.example.news"
         minSdk = 28
         targetSdk = 33
         versionCode = 1
